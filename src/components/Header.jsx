@@ -1,6 +1,7 @@
 import { AppBar, Container, createTheme, MenuItem, Select, ThemeProvider, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 import {styled} from '@mui/system'
+import { CurrencyState } from '../CurrencyContext'
 
 const Header = () => {
 
@@ -11,7 +12,7 @@ const Header = () => {
         fontWeight: "bold",
         cursor: "pointer",
     }))
-
+    
     const darkTheme = createTheme({
         palette: {
             primary: {
@@ -20,6 +21,11 @@ const Header = () => {
             mode: 'dark'
         }
     })
+
+    const {currency, setCurrency} = CurrencyState();
+
+    console.log(currency);
+    
   return (
     <ThemeProvider theme={darkTheme}>
     <AppBar color='transparent' position='static'>
@@ -30,6 +36,8 @@ const Header = () => {
                 </Title>
                 <Select variant='outlined'
                         sx={{ width: 100, height: 40, marginLeft: 2 }}
+                        value={currency}
+                        onChange={(e) => setCurrency(e.target.value)}
                 >
                     <MenuItem value={'USD'}>USD</MenuItem>
                     <MenuItem value={'INR'}>INR</MenuItem>
