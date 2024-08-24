@@ -3,7 +3,7 @@ import { CurrencyState } from '../../CurrencyContext';
 import axios from 'axios';
 import { TrendingCoins } from '../../config/api';
 import { Link } from 'react-router-dom';
-import { Box, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import AliceCarousel from 'react-alice-carousel';
 
 const Carousel = () => {
@@ -36,7 +36,6 @@ const Carousel = () => {
                 cursor: "pointer",
                 textTransform: "uppercase",
                 color: "white",
-                textDecoration: "none"
               }}
               key={coin.id}
             >
@@ -60,7 +59,10 @@ const Carousel = () => {
                     </span>
                 </Typography>
                 <Typography>
+                    <span style={{ fontSize: 22, fontWeight: 500 }}>
                     {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
+                    </span>
+                    
                 </Typography>
             </Link>
         )
@@ -75,7 +77,7 @@ const Carousel = () => {
         },
       };
   return (
-    <Box
+    <Container
         sx={{
             height: "50%",
             display: "flex",
@@ -93,7 +95,7 @@ const Carousel = () => {
             items={items}
             autoPlay
         />
-    </Box>
+    </Container>
   )
 }
 

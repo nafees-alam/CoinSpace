@@ -5,15 +5,17 @@ import Carousel from './Carousel';
 
 const BannerContainer = styled('div')({
     backgroundImage: "url(/banner2.jpg)",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
 })
 
-const BannerContent = styled(Container)(({theme}) => ({
-    height: 400,
+const BannerContent = styled(Container)({
+    height: 275,
     display: "flex",
     flexDirection: "column",
     paddingTop: 25,
     justifyContent: "space-around",
-}))
+})
 
 const Tagline = styled('div')({
     display: "flex",
@@ -21,12 +23,6 @@ const Tagline = styled('div')({
     flexDirection: "column",
     justifyContent: "center",
     textAlign: "center",
-})
-
-const CarousaelContainer = styled('div')({
-    height: "50%",
-    display: "flex",
-    alignItems: "center",
 })
 const Banner = () => {
   return (
