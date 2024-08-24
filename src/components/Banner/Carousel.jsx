@@ -82,6 +82,7 @@ const Carousel = () => {
             height: "50%",
             display: "flex",
             alignItems: "center",
+            paddingBottom: 4
         }}
     >
         <AliceCarousel 

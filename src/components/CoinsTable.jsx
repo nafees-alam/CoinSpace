@@ -12,6 +12,7 @@ import {
   Table,
   Paper,
   Pagination,
+  Box,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
@@ -83,12 +84,15 @@ const CoinsTable = () => {
                 sx={{ marginBottom: 2, width: '100%'}}
                 onChange={(e) => setSearch(e.target.value)}
             />
+            <Box color='gold' sx={{ marginBottom: 2 }}>
+                You can Click on any coin icon to see the Live Chart.
+            </Box>
             <TableContainer component={Paper}>
                 {loading ? (
                     <LinearProgress sx={{background: "gold"}}/>
                 ) : (
                     <Table aria-label='simple table'>
-                        <TableHead sx={{backgroundColor: "#EEBC1D"}}>
+                        <TableHead sx={{backgroundColor: "#EEBC1D", hieght: '4'}}>
                             <TableRow>
                             {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
                                 <TableCell

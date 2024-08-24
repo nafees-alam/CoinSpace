@@ -2,8 +2,11 @@ import { AppBar, Container, createTheme, MenuItem, Select, ThemeProvider, Toolba
 import React from 'react'
 import {styled} from '@mui/system'
 import { CurrencyState } from '../CurrencyContext'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+
+    const navigate = useNavigate();
 
     const Title = styled(Typography)(({ theme }) => ({
         flex: 1,
@@ -25,14 +28,18 @@ const Header = () => {
     const {currency, setCurrency} = CurrencyState();
 
     console.log(currency);
+
+    const handleClick = () => {
+        navigate('/');
+    }
     
   return (
     <ThemeProvider theme={darkTheme}>
     <AppBar color='transparent' position='static'>
         <Container>
             <Toolbar>
-                <Title>
-                    CryptoApp
+                <Title onClick={handleClick}>
+                    Coin Sphere
                 </Title>
                 <Select variant='outlined'
                         sx={{ width: 100, height: 40, marginLeft: 2 }}
