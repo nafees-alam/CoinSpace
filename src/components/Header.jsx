@@ -39,7 +39,7 @@ const Header = () => {
         <Container>
             <Toolbar>
                 <Title onClick={handleClick}>
-                    Coin Sphere
+                    Coin Space
                 </Title>
                 <Select variant='outlined'
                         sx={{ width: 100, height: 40, marginLeft: 2 }}
