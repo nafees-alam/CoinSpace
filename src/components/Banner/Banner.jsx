@@ -37,7 +37,7 @@ const Banner = () => {
                     fontFamily: "Montserrat",
                     }}
                 >
-                    Coin Sphere
+                    Coin Space
                 </Typography>
                 <Typography
                     variant="subtitle2"
